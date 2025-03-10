@@ -19,7 +19,6 @@ public:
   Adafruit_MCP23X18();
   
   void pinMode(uint8_t pin, uint8_t mode);
-
 };
 
 #endif
