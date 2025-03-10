@@ -7,7 +7,7 @@
 
 #include "Adafruit_MCP23X17.h"
 
-#define OUTPUT_PULLUP 4
+#define OUTPUT_PULLUP 4 //!< Additional define for Output with Pullup
 
 /**************************************************************************/
 /*!
