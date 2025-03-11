@@ -17,7 +17,7 @@
 class Adafruit_MCP23X18 : public Adafruit_MCP23X17 {
 public:
   Adafruit_MCP23X18();
-  
+
   void pinMode(uint8_t pin, uint8_t mode);
 };
 

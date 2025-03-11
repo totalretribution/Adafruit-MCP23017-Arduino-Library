@@ -27,6 +27,6 @@ void Adafruit_MCP23X18::pinMode(uint8_t pin, uint8_t mode) {
   Adafruit_BusIO_RegisterBits dir_bit(&IODIR, 1, pin % 8);
   Adafruit_BusIO_RegisterBits pullup_bit(&GPPU, 1, pin % 8);
 
-  dir_bit.write((mode == OUTPUT) ? 0 : 1); 
+  dir_bit.write((mode == OUTPUT) ? 0 : 1);
   pullup_bit.write((mode == INPUT_PULLUP || mode == OUTPUT_PULLUP) ? 1 : 0);
 }
