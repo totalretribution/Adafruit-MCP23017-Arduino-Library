@@ -98,3 +98,32 @@ void Adafruit_MCP23X17::enableAddrPins() {
   GPIONoAddr.write((1 << 3), 1); // Bit3: HAEN, devices with A2 = 0
   GPIOAddr.write((1 << 3), 1);   // Devices with A2 = 1 (if any)
 }
+
+/**************************************************************************/
+/*!
+  @brief Get pin states captured at time of interrupt on Port A.
+  @returns Mutli-bit value representing pin states.
+*/
+/**************************************************************************/
+uint8_t Adafruit_MCP23X17::getCapturedInterruptA() {
+  uint8_t intcap;
+
+  Adafruit_BusIO_Register INTCAPA(i2c_dev, spi_dev, MCP23XXX_SPIREG,
+                                  getRegister(MCP23XXX_INTCAP, 0));
+  INTCAPA.read(&intcap);
+  return intcap;
+}
+
+/**************************************************************************/
+/*!
+  @brief Get pin states captured at time of interrupt on Port B.
+  @returns Mutli-bit value representing pin states.
+*/
+/**************************************************************************/
+uint8_t Adafruit_MCP23X17::getCapturedInterruptB() {
+  uint8_t intcap;
+    Adafruit_BusIO_Register INTCAPB(i2c_dev, spi_dev, MCP23XXX_SPIREG,
+                                    getRegister(MCP23XXX_INTCAP, 1));
+    INTCAPB.read(&intcap);
+    return intcap;
+}

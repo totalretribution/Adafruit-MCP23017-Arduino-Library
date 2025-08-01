@@ -23,6 +23,8 @@ public:
   uint16_t readGPIOAB();
   void writeGPIOAB(uint16_t value);
   void enableAddrPins();
+  uint8_t getCapturedInterruptA();
+  uint8_t getCapturedInterruptB();
 };
 
 #endif
